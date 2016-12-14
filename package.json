@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/citypaul/hackday-forum-server#readme",
   "dependencies": {
+    "fs-extra": "^1.0.0",
     "hapi": "^16.0.1",
     "mongodb": "^2.2.16"
   }
