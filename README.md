@@ -4,6 +4,12 @@ brew services start mongodb
 mongo 
 
 
+setup:
+
+Once you've got mongo installed and running locally, run `node setup-db.js`.
+
+To see if it's working, then run `node index.js` and go to localhost:8000/topic/football-data
+
 [
     topics: [
         {
