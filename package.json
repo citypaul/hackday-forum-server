@@ -1,0 +1,22 @@
+{
+  "name": "hackday-forum-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/citypaul/hackday-forum-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/citypaul/hackday-forum-server/issues"
+  },
+  "homepage": "https://github.com/citypaul/hackday-forum-server#readme",
+  "dependencies": {
+    "hapi": "^16.0.1"
+  }
+}
