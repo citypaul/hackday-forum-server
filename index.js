@@ -37,6 +37,48 @@ server.route({
     }
 });
 
+server.route({
+    method: 'PUT',
+    path: '/topic/{topicName}',
+    handler: function (request, reply) {
+        const threadMessage = request.payload.threadMessage;
+        const topicName = request.params.topicName;
+
+        MongoClient.connect(url, function (err, db) {
+            const collection = db.collection('threads');
+
+
+            collection.update({
+                name: topicName
+            }, {
+                $push: {
+                    threads: [
+                        {
+                            message: threadMessage,
+                            createdAt: new Date(),
+                            lastModified: new Date(),
+                            votes: {
+                                up: 0,
+                                down: 0
+                            },
+                            comments: []
+                        }
+                    ]
+                }
+            });
+
+            // update({"name": "football-data"}, { $push: { threads: [{smeg: 'test'}] } });
+
+
+            findTopicByTopicName(db, topicName, (topic) => {
+                db.close();
+                return reply(topic);
+            });
+        });
+
+    }
+});
+
 // Start the server
 server.start((err) => {
 
