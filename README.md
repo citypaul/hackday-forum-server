@@ -5,6 +5,8 @@ mongo
 
 
 setup:
+`nvm install`
+`nvm use`
 
 Once you've got mongo installed and running locally, run `node setup-db.js`.
 
