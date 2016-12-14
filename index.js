@@ -54,6 +54,7 @@ server.route({
                 $push: {
                     threads: [
                         {
+                            id: Math.random(0, 10000000000) * 10000000,
                             message: threadMessage,
                             createdAt: new Date(),
                             lastModified: new Date(),
@@ -66,9 +67,6 @@ server.route({
                     ]
                 }
             });
-
-            // update({"name": "football-data"}, { $push: { threads: [{smeg: 'test'}] } });
-
 
             findTopicByTopicName(db, topicName, (topic) => {
                 db.close();
