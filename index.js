@@ -2,9 +2,7 @@
 
 const Hapi = require('hapi');
 const MongoClient = require('mongodb').MongoClient;
-
 const url = 'mongodb://localhost:27017/threads';
-// Use connect method to connect to the Server 
 
 const findTopicByTopicName = (db, topicName, callback) => {
     const collection = db.collection('threads');
@@ -15,7 +13,6 @@ const findTopicByTopicName = (db, topicName, callback) => {
     });
 };
 
-// Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
