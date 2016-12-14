@@ -8,8 +8,13 @@ mongo
 
 
 setup:
-`nvm install`
+
+From the root directory, do:
 `nvm use`
+
+If you don't have node 7.2.1 installed, you may need to do `nvm install 7.2.1` first.
+
+Then run `npm install`.
 
 Once you've got mongo installed and running locally, run `node setup-db.js`.
 
