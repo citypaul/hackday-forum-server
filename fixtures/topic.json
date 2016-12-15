@@ -1,16 +1,16 @@
 {
     "name" : "football-data",
-    "comment" : "We are interested in your ideas for our football data refresh",
-    "threads" : [ 
+    "comment" : "Tell us what you think about our new football scores page",
+    "threads" : [
         {
-            "message" : "Build feature x",
+            "message" : "Where have the 'as it stands' tables gone?",
             "votes" : {
-                "up" : 50,
-                "down" : 37
+                "up" : 6,
+                "down" : 1
             },
             "createdAt" : "",
             "lastModified" : "",
-            "comments" : [ 
+            "comments" : [
                 {
                     "comment" : "asdasd",
                     "votes" : {
@@ -19,16 +19,16 @@
                     }
                 }
             ]
-        }, 
+        },
         {
-            "message" : "Build feature yy",
+            "message" : "Really like the refresh, it seems to load much faster now",
             "votes" : {
-                "up" : 10,
-                "down" : 37
+                "up" : 2,
+                "down" : 1
             },
             "createdAt" : "",
             "lastModified" : "",
-            "comments" : [ 
+            "comments" : [
                 {
                     "comment" : "another comment",
                     "votes" : {
