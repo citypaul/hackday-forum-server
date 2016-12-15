@@ -30,6 +30,7 @@ server.route({
         MongoClient.connect(url, function (err, db) {
             findTopicByTopicName(db, request.params.topicName, (topic) => {
                 db.close();
+                //sort it here
                 return reply(topic);
             });
         });
@@ -52,7 +53,7 @@ server.route({
                 name: topicName
             }, {
                 $push: {
-                    threads: [
+                    threads:
                         {
                             id: Math.random(0, 10000000000) * 10000000,
                             message: threadMessage,
@@ -64,7 +65,6 @@ server.route({
                             },
                             comments: []
                         }
-                    ]
                 }
             });
 
@@ -76,6 +76,35 @@ server.route({
 
     }
 });
+
+// server.route({
+//     method: 'PUT',
+//     path: '/topic/{topicName}/thread/{id}/votes/up',
+//     handler: function (request, reply) {
+//         const topicName = request.params.topicName;
+//         const id = request.params.id;
+//
+//         MongoClient.connect(url, function (err, db) {
+//             const collection = db.collection('threads');
+//
+//
+//             collection.update({
+//                 name: topicName,
+//                 threads.$.id: id
+//             }, {
+//                 $set: {
+//                     votes.up = votes.up + 1
+//                 }
+//             });
+//
+//             findTopicByTopicName(db, topicName, (topic) => {
+//                 db.close();
+//                 return reply(topic);
+//             });
+//         });
+//
+//     }
+// });
 
 // Start the server
 server.start((err) => {
